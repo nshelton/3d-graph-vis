@@ -67,7 +67,7 @@ $( document ).ready(function() {
 
 	camera = new THREE.PerspectiveCamera( 
     60, window.innerWidth / window.innerHeight, 0.01, 10000 );
-  var renderer = new THREE.WebGLRenderer();
+  var renderer = new THREE.WebGLRenderer({antialias:true});
   initScene(scene, camera, renderer);
 
 
