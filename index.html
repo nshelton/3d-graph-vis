@@ -115,9 +115,13 @@ $( document ).ready(function() {
 
   $.get('http://thisnode.herokuapp.com/api/nodes/', function(data) {
     for (var i =0; i < data.length; i ++) {
-      if (data[i].profile)
+
+      if (data[i].profile) {
         layout.pushNode( data[i].id, data[i].profile.picture.data.url, {name : data[i].profile.name });
-    
+        data[i].profile.gender == "male"?
+          hud.genders.male++:
+          hud.genders.female++;
+      }
 
     }
 
@@ -151,6 +155,7 @@ $( document ).ready(function() {
   $.get('http://thisnode.herokuapp.com/api/nodes/stats/',
    function(data) {
     hud.update(data);
+    hud.plotGender();
   });
 
 
