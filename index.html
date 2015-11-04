@@ -25,7 +25,7 @@
 </head>
 <body style="margin:0">
   <div id="hud"> 
-    <span class="title">--------TOTALS--------</span>
+    <span class="title">------------TOTALS------------</span>
     <!-- <span class="title">========TOTALS========</span> -->
     <span class="item">nodes  </span>
       <span class="value" id="node_total"></span>
@@ -37,13 +37,13 @@
       <span class="value" id="tag_total"></span>
     <!-- <span class="title">====================</span> -->
 
-    <span class="title">--------GENDER--------</span>
+    <span class="title">------------GENDER------------</span>
     <span class="item">male </span>
       <span class="value" id="male_total"></span>
     <span class="item">female </span>
       <span class="value" id="female_total"> </span>
 
-    <span class="title">-----SUPERLATIVES-----</span>
+    <span class="title">---------SUPERLATIVES---------</span>
     <span class="item">most active</span>
       <span class="value" id="most_active"></span>
     <span class="item">most popular</span>
@@ -127,7 +127,7 @@ $( document ).ready(function() {
     var total = 0
     for (i in nodes) {
       $.get('http://thisnode.herokuapp.com/api/edges/to/' + i, function(data) {
-        for (var i =0; i < data.length; i ++) {
+        for (var i =0; i < data.length/3 + 1; i ++) {
               layout.pushEdge(data[i].from, data[i].to, 
                 {type: data[i].type});
         }
@@ -166,7 +166,7 @@ $( document ).ready(function() {
     gui.add(layout, 'repulsion_coeff');
     gui.add(layout, 'attraction_coeff');
     gui.add(layout, 'refine_layout');
-
+    gui.close();
 
   
   var frame = 0;
