@@ -1,4 +1,9 @@
-#hud {
+body {
+  overflow:hidden;
+
+}
+
+#hud{
 	font-family: Anonymous Pro;
 	position:absolute;
 	width:260px;
@@ -7,6 +12,19 @@
 	padding:20px;
 	/*background-color:rgba(0,0,0,0.5);*/
 	font-size:10px;
+  color: white;
+}
+span.like {
+	color: #00ffff;
+}
+span.tag {
+	color: #ffff00;
+}
+span.comment {
+	color: #FF00ff;
+}
+span.friend {
+	color: #FFFFFF;
 }
 h2 {
 	padding:2px;
@@ -25,5 +43,22 @@ h2 {
 
 .value {
 	width:50%;
+    display: inline-block;
+}
+#node {
+	font-family: Anonymous Pro;
+	position:absolute;
+	/*width:260px;*/
+	height:100%;
+	z-index:100;
+	padding:20px;
+	/*background-color:rgba(0,0,0,0.5);*/
+	font-size:10px;
+  color: white;
+}
+#name {
+	padding:5px 0;
+	width:100%;
+	font-size:50px;
     display: inline-block;
 }
